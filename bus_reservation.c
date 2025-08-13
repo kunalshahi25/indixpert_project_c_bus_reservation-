@@ -11,13 +11,9 @@ int flag = 0;
 int j = 3;
 int cancel101 = 0, cancel102 = 0, cancel103 = 0, cancel104 = 0;
 int cancel105 = 0, cancel106 = 0, cancel107 = 0, cancel108 = 0;
-// int bus_num[100];
 int no_seats101, no_seats102, no_seats103, no_seats104;
 int no_seats105, no_seats106, no_seats107, no_seats108;
-// int avl_seats101 = 50 - no_seats101 + cancel101;
-// int avl_seats102 = 50 - no_seats102 + cancel102;
-// int avl_seats103 = 50 - no_seats103 + cancel103;
-// int avl_seats104 = 50 - no_seats104 + cancel104;
+
 int bnum;
 void bus_reg_info()
 {
