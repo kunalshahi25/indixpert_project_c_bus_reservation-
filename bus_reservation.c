@@ -47,7 +47,7 @@ void bus_login()
     scanf(" %[^\n]", &user_id);
     printf("Please enter password: ");
     scanf(" %s", &password);
-    if (strcmp(user_id, reg_user_id) == 0 && strcmp(password, reg_password) == 0)
+    if (strcmp(user_id, reg_user_id) == 0 && strcmp(password, reg_password) == 0)   //comparing name and password
     {
         printf("\n\033[1;32mLogin successful. Welcome,\033[0m \033[1;31m%s %s\033[0m \033[1;32m!\033[0m\n", first_name, last_name);
     }
@@ -96,13 +96,13 @@ void bus_status_ticket();
 void bus_menu()
 {
     printf("\n\033[1;35m101:            Delhi to Uttarakhand.\033[0m");
-    printf("\n\033[1;35m102:            Delhi to Uttarakhand.\033[0m");
+    printf("\n\033[1;35m102:            Delhi to Uttarakhand.(AC)\033[0m");
     printf("\n\033[1;35m103:            Delhi to Bihar.\033[0m");
-    printf("\n\033[1;35m104:            Delhi to Bihar.\033[0m");
+    printf("\n\033[1;35m104:            Delhi to Bihar.(AC)\033[0m");
     printf("\n\033[1;35m105:            Delhi to Haryana.\033[0m");
-    printf("\n\033[1;35m106:            Delhi to Haryana.\033[0m");
+    printf("\n\033[1;35m106:            Delhi to Haryana.(AC)\033[0m");
     printf("\n\033[1;35m107:            Delhi to Rajasthan.\033[0m");
-    printf("\n\033[1;35m108:            Delhi to Rajasthan.\033[0m");
+    printf("\n\033[1;35m108:            Delhi to Rajasthan.(AC)\033[0m");
 }
 int bus_type_ticket()
 {
