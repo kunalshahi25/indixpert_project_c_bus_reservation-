@@ -133,21 +133,24 @@ int main()
             if (choice == 1)
             {
                 bus_menu();
+                printf("\n");
                 booking_ticket();
             }
             else if (choice == 2)
             {
                 bus_menu();
+                printf("\n");
                 canceling_ticket();
             }
             else if (choice == 3)
             {
                 bus_menu();
+                printf("\n");
                 bus_status_ticket();
             }
             else if (choice == 4)
             {
-                printf("Login Back Again !");
+                printf("\033[1;31mLogin Back Again !\033[0m");
                 exit(0);
             }
             else
@@ -486,7 +489,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats107 - cancel107));
     }
-    if (bnum == 102)
+    else if (bnum == 102)
     {
         printf("\033[1;34mBus Number:                 %d\033[0m", bnum);
         printf("\n\033[1;34mSource city:                Delhi\033[0m");
@@ -496,7 +499,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats102 - cancel102));
     }
-    if (bnum == 104)
+    else if (bnum == 104)
     {
         printf("\033[1;34mBus Number:                 %d\033[0m", bnum);
         printf("\n\033[1;34mSource city:                Delhi\033[0m");
@@ -506,7 +509,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats104 - cancel104));
     }
-    if (bnum == 106)
+    else if (bnum == 106)
     {
         printf("\033[1;34mBus Number:                 %d\033[0m", bnum);
         printf("\n\033[1;34mSource city:                Delhi\033[0m");
@@ -516,7 +519,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats106 - cancel106));
     }
-    if (bnum == 108)
+    else if (bnum == 108)
     {
         printf("\033[1;34mBus Number:                 %d\033[0m", bnum);
         printf("\n\033[1;34mSource city:                Delhi\033[0m");
