@@ -456,6 +456,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Uttarakhand\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats101 + cancel101);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats101 - cancel101);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats101 - cancel101));
     }
@@ -466,6 +467,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Bihar\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats103 + cancel103);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats103 - cancel103);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats103 - cancel103));
     }
@@ -476,6 +478,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Haryana\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats105 + cancel105);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats105 - cancel105);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats105 - cancel105));
     }
@@ -486,6 +489,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Rsjasthan\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats107 + cancel107);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats107 - cancel107);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats107 - cancel107));
     }
@@ -496,6 +500,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Uttarakhand\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats102 + cancel102);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats102 - cancel102);
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats102 - cancel102));
     }
@@ -506,6 +511,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Bihar\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats104 + cancel104);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats104 - cancel104);
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats104 - cancel104));
     }
@@ -516,6 +522,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Harayana\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats106 + cancel106);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats106 - cancel106);
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats106 - cancel106));
     }
@@ -526,6 +533,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Rajasthan\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats108 + cancel108);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats108 - cancel108);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats108 - cancel108));
     }
