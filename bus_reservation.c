@@ -6,6 +6,8 @@ char reg_user_id[20];
 char user_id[20];
 char password[20];
 char reg_password[20];
+char reg_password[20];
+char reg_password_cnfrm[20];
 char first_name[20], last_name[20];
 int flag = 0;
 int j = 3;
@@ -29,6 +31,49 @@ void bus_reg_info()
     scanf(" %[^\n]", &reg_user_id);
     printf("Enter password: ");
     scanf("%s", &reg_password);
+    printf("Confirm password: ");
+    scanf("%s", &reg_password_cnfrm);
+    if (strcmp(reg_password, reg_password_cnfrm) == 0)
+    {
+        printf("\n\033[1;32mSign Up Successful. Welcome !\033[0m");
+    }
+    else
+    {
+        printf("\033[1;31mPassword Not Matched.\n\033[0m");
+        for (int i = 0; i < 3; i++)
+        {
+            printf("\033[1;31m    ===Sign Up===    \033[0m\n");
+            printf("\n");
+            printf("Enter Your First Name: ");
+            scanf(" %[^\n]", &first_name);
+            printf("Enter Your Last Name: ");
+            scanf(" %[^\n]", &last_name);
+            printf("Enter user id: ");
+            scanf(" %[^\n]", &reg_user_id);
+            printf("Enter password: ");
+            scanf("%s", &reg_password);
+            printf("Confirm password: ");
+            scanf("%s", &reg_password_cnfrm);
+            if (strcmp(reg_password, reg_password_cnfrm) == 0)
+            {
+                printf("\n\033[1;32mSign Up successful. Welcome,\033[0m \033[1;31m%s %s\033[0m \033[1;32m!\033[0m\n", first_name, last_name);
+                flag = 1;
+                if (flag == 1)
+                {
+                    break;
+                }
+            }
+            else
+                printf("\033[1;31mYou have %d attempt left.\033[0m\n", --j);
+            if (j == 0)
+            {
+                exit(0);
+            }
+        }
+    }
+
+    printf("Sign Up Completed.");
+
     printf("\n");
 }
 int bus_login_info()
@@ -47,7 +92,7 @@ void bus_login()
     scanf(" %[^\n]", &user_id);
     printf("Please enter password: ");
     scanf(" %s", &password);
-    if (strcmp(user_id, reg_user_id) == 0 && strcmp(password, reg_password) == 0)   //comparing name and password
+    if (strcmp(user_id, reg_user_id) == 0 && strcmp(password, reg_password) == 0) // comparing name and password
     {
         printf("\n\033[1;32mLogin successful. Welcome,\033[0m \033[1;31m%s %s\033[0m \033[1;32m!\033[0m\n", first_name, last_name);
     }
@@ -171,7 +216,7 @@ int booking_ticket()
         scanf(" %d", &bnum);
         if (bnum == 102)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats102);
             printf("\n");
             if (no_seats102 > 50 || no_seats102 < 0)
@@ -188,7 +233,7 @@ int booking_ticket()
         }
         else if (bnum == 104)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats104);
             printf("\n");
             if (no_seats104 > 50 || no_seats104 < 0)
@@ -197,12 +242,15 @@ int booking_ticket()
                 printf("\n");
                 booking_ticket();
             }
-            printf("\n");
-            printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats104, bnum);
+            else
+            {
+                printf("\n");
+                printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats104, bnum);
+            }
         }
         else if (bnum == 106)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats106);
             printf("\n");
             if (no_seats106 > 50 || no_seats106 < 0)
@@ -211,12 +259,15 @@ int booking_ticket()
                 printf("\n");
                 booking_ticket();
             }
-            printf("\n");
-            printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats106, bnum);
+            else
+            {
+                printf("\n");
+                printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats106, bnum);
+            }
         }
         else if (bnum == 108)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats108);
             printf("\n");
             if (no_seats108 > 50 || no_seats108 < 0)
@@ -225,11 +276,16 @@ int booking_ticket()
                 printf("\n");
                 booking_ticket();
             }
-            printf("\n");
-            printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats108, bnum);
+            else
+            {
+                printf("\n");
+                printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats108, bnum);
+            }
         }
         else
         {
+            printf("\033[1;31mSorry, Bus not available !\033[0m");
+            printf("\n");
             booking_ticket();
         }
     }
@@ -239,7 +295,7 @@ int booking_ticket()
         scanf("%d", &bnum);
         if (bnum == 101)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats101);
             printf("\n");
             if (no_seats101 > 50 || no_seats101 < 0)
@@ -256,7 +312,7 @@ int booking_ticket()
         }
         else if (bnum == 103)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats103);
             printf("\n");
             if (no_seats103 > 50 || no_seats103 < 0)
@@ -265,12 +321,15 @@ int booking_ticket()
                 printf("\n");
                 booking_ticket();
             }
-            printf("\n");
-            printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats103, bnum);
+            else
+            {
+                printf("\n");
+                printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats103, bnum);
+            }
         }
         else if (bnum == 105)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats105);
             printf("\n");
             if (no_seats105 > 50 || no_seats105 < 0)
@@ -279,12 +338,15 @@ int booking_ticket()
                 printf("\n");
                 booking_ticket();
             }
-            printf("\n");
-            printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats105, bnum);
+            else
+            {
+                printf("\n");
+                printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats105, bnum);
+            }
         }
         else if (bnum == 107)
         {
-            printf("Enter Number of Seats: ");
+            printf("Enter Number of Seats(MAX : 50): ");
             scanf("%d", &no_seats107);
             printf("\n");
             if (no_seats107 > 50 || no_seats107 < 0)
@@ -293,11 +355,16 @@ int booking_ticket()
                 printf("\n");
                 booking_ticket();
             }
-            printf("\n");
-            printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats107, bnum);
+            else
+            {
+                printf("\n");
+                printf("\n \033[1;32mBooking Successful ! %d seats booked on Bus number %d\033[0m\n", no_seats107, bnum);
+            }
         }
         else
         {
+            printf("\033[1;31mSorry, Bus not available !\033[0m");
+            printf("\n");
             booking_ticket();
         }
     }
@@ -456,7 +523,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Uttarakhand\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats101 + cancel101);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats101 - cancel101);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats101 - cancel101);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats101 - cancel101));
     }
@@ -467,7 +534,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Bihar\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats103 + cancel103);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats103 - cancel103);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats103 - cancel103);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats103 - cancel103));
     }
@@ -478,7 +545,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Haryana\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats105 + cancel105);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats105 - cancel105);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats105 - cancel105);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats105 - cancel105));
     }
@@ -489,7 +556,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Rsjasthan\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats107 + cancel107);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats107 - cancel107);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats107 - cancel107);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats107 - cancel107));
     }
@@ -500,7 +567,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Uttarakhand\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats102 + cancel102);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats102 - cancel102);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats102 - cancel102);
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats102 - cancel102));
     }
@@ -511,7 +578,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Bihar\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats104 + cancel104);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats104 - cancel104);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats104 - cancel104);
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats104 - cancel104));
     }
@@ -522,7 +589,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Harayana\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats106 + cancel106);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats106 - cancel106);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats106 - cancel106);
         printf("\n\033[1;34mFare per person:            1000.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 1000 * (no_seats106 - cancel106));
     }
@@ -533,7 +600,7 @@ void bus_status_ticket()
         printf("\n\033[1;34mDestination City:           Rajasthan\033[0m");
         printf("\n\033[1;34mTotal Seats:                50\033[0m");
         printf("\n\033[1;34mAvailable Seats:            %d\033[0m", 50 - no_seats108 + cancel108);
-        printf("\n\033[1;34mBooked Seats:               %d\033[0m",no_seats108 - cancel108);
+        printf("\n\033[1;34mBooked Seats:               %d\033[0m", no_seats108 - cancel108);
         printf("\n\033[1;34mFare per person:            500.00\033[0m");
         printf("\n\033[1;34mYour total fare:            %d\033[0m", 500 * (no_seats108 - cancel108));
     }
